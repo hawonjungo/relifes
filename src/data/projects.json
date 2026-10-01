@@ -1,6 +1,26 @@
 {
   "projects": [
     {
+      "slug": "injoker",
+      "title": "Injoker",
+      "tagline": "An elemental-combining keyboarding game that blends fast typing with quick tactical thinking, inspired by element-invoking skill mechanics.",
+      "description": "Overview & Gameplay\nSpeed & Reflex Training: Combine different keystrokes to generate unique skill combinations.\nMonster Countering: Each skill type counters and defeats a specific type of monster. You need quick reflexes to invoke the correct spell before being overwhelmed.\nProject Goal: Started during the 2nd year of university to gain hands-on practice with Object-Oriented Programming (OOP) and game state management.",
+      "url": "https://injoker.relifes.net",
+      "repoUrl": "",
+      "thumbnail": "projects/injoker/mup32p3dpzio.webp",
+      "gallery": [],
+      "tech": [
+        "C++",
+        "OOP"
+      ],
+      "category": "Game",
+      "status": "live",
+      "featured": true,
+      "hidden": false,
+      "createdAt": "2026-10-01",
+      "updatedAt": "2026-10-01"
+    },
+    {
       "slug": "respeako",
       "title": "ReSpeako",
       "tagline": "Speech-to-text, text-to-speech and IPA lookup for language learners.",
@@ -31,26 +51,6 @@
       "gallery": [],
       "tech": [],
       "category": "",
-      "status": "live",
-      "featured": false,
-      "hidden": false,
-      "createdAt": "2026-10-01",
-      "updatedAt": "2026-10-01"
-    },
-    {
-      "slug": "injoker",
-      "title": "Injoker",
-      "tagline": "An elemental-combining keyboarding game that blends fast typing with quick tactical thinking, inspired by element-invoking skill mechanics.",
-      "description": "Overview & Gameplay\nSpeed & Reflex Training: Combine different keystrokes to generate unique skill combinations.\nMonster Countering: Each skill type counters and defeats a specific type of monster. You need quick reflexes to invoke the correct spell before being overwhelmed.\nProject Goal: Started during the 2nd year of university to gain hands-on practice with Object-Oriented Programming (OOP) and game state management.",
-      "url": "https://injoker.relifes.net",
-      "repoUrl": "",
-      "thumbnail": "projects/injoker/mup32p3dpzio.webp",
-      "gallery": [],
-      "tech": [
-        "C++",
-        "OOP"
-      ],
-      "category": "Game",
       "status": "live",
       "featured": false,
       "hidden": false,
