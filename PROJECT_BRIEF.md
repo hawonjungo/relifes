@@ -4,14 +4,14 @@ Handover notes: what was decided, what is built, and what is still open. See `RE
 
 ## Goal
 
-A hub at `relifes.net`: a landing page listing the projects that run on sub-domains, with an `/admin/` page to add, edit and remove projects without rebuilding by hand.
+A hub at `relifes.net`: a landing page listing the projects that run on sub-domains, with a `/radmin/` page to add, edit and remove projects without rebuilding by hand.
 
 ## Decisions
 
 - **Hosting:** GitHub Pages, deployed by GitHub Actions on every push to `main`.
 - **Stack:** Vite + React + Tailwind CSS. Next.js was rejected: on static hosting its middleware, server actions and route handlers do not run.
 - **Storage:** no database. Project data is `src/data/projects.json` and images are files under `public/projects/`, all in this repository. Supabase, Firebase and MongoDB Atlas were considered and rejected in favour of having no third-party service that can pause, change pricing or need a server.
-- **Admin sign-in:** a GitHub fine-grained personal access token pasted into `/admin/`. Only the owner uses the admin, so there is no Google login. Write protection is enforced by GitHub, not by the UI.
+- **Admin sign-in:** a GitHub fine-grained personal access token pasted into `/radmin/`. Only the owner uses the admin, so there is no Google login. Write protection is enforced by GitHub, not by the UI.
 - **Accepted trade-off:** a published change is live after the deploy finishes, about 1–2 minutes, not instantly.
 - **UI language:** English only. Everything in this repository and on GitHub (code, docs, commits, PRs) is English only.
 - **Style:** light, minimal, modern, with a slight cyberpunk feel. No heavy 3D.

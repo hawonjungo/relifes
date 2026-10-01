@@ -1,6 +1,6 @@
 # relifes.net hub
 
-Landing page for [relifes.net](https://relifes.net): a list of the projects that run on its sub-domains, plus an `/admin/` page for adding, editing and removing projects from the browser.
+Landing page for [relifes.net](https://relifes.net): a list of the projects that run on its sub-domains, plus a `/radmin/` page for adding, editing and removing projects from the browser.
 
 There is no database. The project list is a JSON file in this repository, images are files in this repository, and GitHub Pages serves the result.
 
@@ -8,7 +8,7 @@ There is no database. The project list is a JSON file in this repository, images
 
 - `src/data/projects.json` holds the project list. It is bundled into the site at build time.
 - `public/projects/<slug>/` holds uploaded images.
-- `/admin/` signs in with a GitHub personal access token and writes changes to this repository through the GitHub API, as a single commit per publish.
+- `/radmin/` signs in with a GitHub personal access token and writes changes to this repository through the GitHub API, as a single commit per publish.
 - Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site and deploys it to GitHub Pages. A published change is live in 1–2 minutes.
 
 Security lives in GitHub: without a token that can write to this repository, nobody can change anything. The token is kept in the browser's local storage and sent only to `api.github.com`.
@@ -17,7 +17,7 @@ Security lives in GitHub: without a token that can write to this repository, nob
 
 ```sh
 npm install
-npm run dev      # http://localhost:5173 and http://localhost:5173/admin/
+npm run dev      # http://localhost:5173 and http://localhost:5173/radmin/
 npm run build    # output in dist/
 npm run preview  # serve dist/ locally
 ```
@@ -32,7 +32,7 @@ Stack: Vite, React, Tailwind CSS. No router; the public page and the admin page 
 4. Create a fine-grained personal access token at <https://github.com/settings/personal-access-tokens/new>:
    - Repository access: only this repository
    - Repository permissions → Contents: **Read and write**
-5. Open `/admin/` on the deployed site and paste the token.
+5. Open `/radmin/` on the deployed site and paste the token.
 
 ## Using the admin
 
