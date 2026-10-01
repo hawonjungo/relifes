@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-ink: #06070b;
+  --color-panel: #0c0f16;
+  --color-raised: #121724;
+  --color-line: #222a3b;
+  --color-fg: #e7ebf3;
+  --color-muted: #8a93a8;
+  --color-neon: #38f3ff;
+  --color-hot: #ff3d9a;
+  --color-ok: #7dff9b;
+  --color-warn: #ffd166;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Faint grid that fades out down the page. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgb(56 243 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(56 243 255 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 20%, transparent 75%);
+}
+
+::selection {
+  background: var(--color-neon);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-neon);
+  outline-offset: 2px;
+}
+
+/* Kept in the components layer so Tailwind utilities on the same element can override them. */
+@layer components {
+
+/* Cut-corner frame: the outer layer is the 1px border, the inner layer the surface. */
+.frame {
+  --cut: 14px;
+  padding: 1px;
+  background: var(--color-line);
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut)));
+  transition: background-color 0.2s;
+}
+
+.frame > .frame-body {
+  height: 100%;
+  background: var(--color-panel);
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut)));
+}
+
+.frame-hover:hover,
+.frame-hover:focus-within {
+  background: var(--color-neon);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--color-line);
+  background: transparent;
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--color-neon);
+  color: var(--color-neon);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  border-color: var(--color-neon);
+  background: var(--color-neon);
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: transparent;
+  color: var(--color-neon);
+}
+
+.btn-danger:hover:not(:disabled) {
+  border-color: var(--color-hot);
+  color: var(--color-hot);
+}
+
+.btn-sm {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+button.chip {
+  background: transparent;
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+button.chip:hover,
+button.chip[aria-pressed="true"] {
+  border-color: var(--color-neon);
+  color: var(--color-neon);
+}
+
+button.chip[aria-pressed="true"] {
+  background: rgb(56 243 255 / 0.08);
+}
+
+.dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.dot-live {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-neon);
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--color-hot);
+}
+
+} /* end @layer components */
+
+dialog::backdrop {
+  background: rgb(3 4 7 / 0.8);
+  backdrop-filter: blur(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
