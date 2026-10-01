@@ -25,23 +25,20 @@ Live at `https://relifes.net/` (admin at `https://relifes.net/radmin/`), deploye
 - Public page: hero, category and tech filters, project cards, detail dialog with gallery.
 - Admin page: token sign-in, project list with reorder, add/edit/delete form, image upload, single-commit publish.
 
-Not yet verified: publishing from the admin against the real GitHub API (needs an access token).
+Publishing from the admin is confirmed working: adding, editing and removing projects and uploading an image each produced one commit and a successful deploy.
 
-Seed data: five projects. Only ReSpeako and 3D Portfolio have descriptions; the rest have a title and URL only. URLs for ThreeElements and ContentFactory are placeholders that the owner will correct in the admin.
+Content is now maintained by the owner through the admin; `src/data/projects.json` is the source of truth. Run `git pull` before local work, because the admin commits straight to `main`.
 
 ## Domain facts (checked 2026-10-01)
 
 - `relifes.net` is the custom domain of this repository. The custom domain was removed from `hawonjungo/hawonjungo.github.io`, which now serves the old portfolio build at `hawonjungo.github.io`.
-- `React-3D-Portfolio` deploys to its `gh-pages` branch and is reachable at `hawonjungo.github.io/React-3D-Portfolio/`.
+- `React-3D-Portfolio` deploys to its `gh-pages` branch and is served at `portfolio.relifes.net`.
 - `respeako.relifes.net` and `anchoi.relifes.net` resolve and serve their sites.
-- `portfolio.relifes.net`, `threeelements.relifes.net` and `contentfactory.relifes.net` have no DNS record.
+- `contentfactory.relifes.net` does not respond yet; the project is marked as in development.
 
 ## Remaining steps
 
-1. Create the access token and test the admin end to end.
-2. Fill in project descriptions, thumbnails and correct URLs through the admin.
-3. Move the old portfolio to `portfolio.relifes.net`:
-   1. Add a DNS `CNAME` record `portfolio` → `hawonjungo.github.io`.
-   2. Set `portfolio.relifes.net` as the custom domain of `React-3D-Portfolio`, and add a `CNAME` file with that value to its `public/` folder so `gh-pages -d dist` keeps it.
+1. Fill in project descriptions, thumbnails and correct URLs through the admin.
+2. `portfolio.relifes.net` is live for `React-3D-Portfolio`. Still to do there: add a `CNAME` file containing `portfolio.relifes.net` to its `public/` folder, otherwise the next `gh-pages -d dist` deploy drops the custom domain.
 
 Note: enable Pages (Settings → Pages → Source: GitHub Actions) before the first push of a repository that uses this workflow; otherwise the first run fails at `configure-pages` and nothing is deployed until the next push.
