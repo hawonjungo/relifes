@@ -35,7 +35,7 @@
       ],
       "category": "Web App",
       "status": "live",
-      "featured": true,
+      "featured": false,
       "hidden": false,
       "createdAt": "2026-10-01",
       "updatedAt": "2026-10-01"
