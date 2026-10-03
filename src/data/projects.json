@@ -27,7 +27,7 @@
       "description": "ReSpeako is a versatile language tool built with React and Capacitor.\n\nIt offers speech-to-text, text-to-speech and an IPA (International Phonetic Alphabet) lookup to help with language learning and pronunciation. The app is cross-platform, currently targeting Web and Android.",
       "url": "https://respeako.relifes.net",
       "repoUrl": "",
-      "thumbnail": "",
+      "thumbnail": "projects/respeako/mururexlce5v.webp",
       "gallery": [],
       "tech": [
         "React",
@@ -38,24 +38,24 @@
       "featured": false,
       "hidden": false,
       "createdAt": "2026-10-01",
-      "updatedAt": "2026-10-01"
+      "updatedAt": "2026-10-03"
     },
     {
       "slug": "anchoi",
       "title": "AnChoi",
-      "tagline": "",
-      "description": "",
+      "tagline": "Discover, map, and plan your ideal local food and activity tours with smart route optimization.",
+      "description": "AnChoi (Vietnamese for \"Eat & Play\") is a web application designed to help users discover, organize, and optimize local food and activity spots.\n\nKey Features:\n\nSpot Discovery: Easily curate lists of local dining and entertainment spots using video URLs and location details.\n\nInteractive Mapping: Visualize spots on a dynamic Google Maps interface.\n\nSmart Itinerary Planning: Add spots to daily plans and automatically optimize travel routes for seamless trips.\n\nCloud-Backed Architecture: Built on serverless AWS infrastructure to ensure fast, reliable performance.",
       "url": "https://anchoi.relifes.net",
       "repoUrl": "",
-      "thumbnail": "",
+      "thumbnail": "projects/anchoi/muruszw626gy.webp",
       "gallery": [],
       "tech": [],
-      "category": "",
+      "category": "Web App",
       "status": "live",
       "featured": false,
       "hidden": false,
       "createdAt": "2026-10-01",
-      "updatedAt": "2026-10-01"
+      "updatedAt": "2026-10-03"
     },
     {
       "slug": "contentfactory",
@@ -81,7 +81,7 @@
       "description": "My earlier portfolio site: a scroll-driven page with interactive 3D scenes, animated sections and a contact form.",
       "url": "https://portfolio.relifes.net",
       "repoUrl": "https://github.com/hawonjungo/React-3D-Portfolio",
-      "thumbnail": "",
+      "thumbnail": "projects/3d-portfolio/muruvr9iau5r.webp",
       "gallery": [],
       "tech": [
         "React",
@@ -94,7 +94,7 @@
       "featured": false,
       "hidden": false,
       "createdAt": "2026-10-01",
-      "updatedAt": "2026-10-01"
+      "updatedAt": "2026-10-03"
     }
   ]
 }
